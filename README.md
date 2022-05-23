@@ -24,59 +24,57 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-
-
 ![wireframe](/public/wireframe.png)
 
 1. App.js
-    - Router
-    - JS file setup (RFCs)
-        - rename .env file
+   - Router
+   - JS file setup (RFCs)
+     - rename .env file
 2. Auth Page
-    - login
-    - signup
+   - login
+   - signup
 3. Fetch Utils
-    - logout
-    - getUser
-    - check Auth
+   - logout
+   - getUser
+   - check Auth
 4. Nav
-    - header
-        - Search
-        - Watched
-        - Logout
+   - header
+     - Search
+     - Watched
+     - Logout
 5. Search
-    - Header
-    - Movie List
-        - Movies
-            - Poster (aka movie item)
-                - header (movie title)
-                - img (movie image)
-                - description (movie description)
-                - Button (watched button)
-    - form
-        - label
-            - input
-        - button
+   - Header
+   - Movie List
+     - Movies
+       - Poster (aka movie item)
+         - header (movie title)
+         - img (movie image)
+         - description (movie description)
+         - Button (watched button)
+   - form
+     - label
+       - input
+     - button
 6. Functions (Third party APIs)
-    - getMovies
-        - fetch utils
-        - netlify function
-    - getWatchedMovies
+   - getMovies
+     - fetch utils
+     - netlify function
+   - getWatchedMovies
 7. Supabase Fetch Utils
-    - Watched Movies Table
-        - id
-        - user_id
-        - created_date
-        - movie_id
-        - movie_title
-        - poster_path
-        - description
-    - get watched movies
-    - get all movies
-        - pagination
-        - search query
-        - remove watched movie
+   - Watched Movies Table
+     - id
+     - user_id
+     - created_date
+     - movie_id
+     - movie_title
+     - poster_path
+     - description
+   - get watched movies
+   - get all movies
+     - pagination
+     - search query
+     - remove watched movie
 8. Watched List
-    - Header
-    - reuse movies poster component from above
-        - map all watched movies from fetch util
+   - Header
+   - reuse movies poster component from above
+     - map all watched movies from fetch util
