@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,25 +9,29 @@ import Header from './Header.js';
 import SearchPage from './SearchPage.js';
 import WatchedPage from './WatchedPage.js';
 import AuthPage from './AuthPage.js';
+import { Redirect } from 'react-router-dom';
 
 function App() {
+  const [user, setUser] = useState(null);
     
   return (
     <Router>
       <div>
-        <Header />
+        <Header setUser={setUser} />
     
         {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/search">
-            <SearchPage />
+            { user ? <SearchPage /> : <AuthPage setUser={setUser}/>}
           </Route>
           <Route exact path="/watched">
-            <WatchedPage />
+            { user ? <WatchedPage /> : <AuthPage setUser={setUser}/>}
           </Route>
           <Route exact path="/">
-            <AuthPage />
+            {user
+              ? <Redirect to="/search"/>
+              : <AuthPage setUser={setUser}/>}
           </Route>
         </Switch>
       </div>
