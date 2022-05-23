@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { logout } from './services/supabase-utils';
 
 export default function Header({ setUser }) {
