@@ -20,7 +20,7 @@ export default function SearchPage() {
   }, [query]);
 
   return (
-    <div>MovieList
+    <div>
       <MovieList movies={movies}/>
     </div>
   );

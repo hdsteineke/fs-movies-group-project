@@ -15,3 +15,7 @@
   padding: 10px;
   justify-content: center;
 }
+
+.movie img {
+  width: 250px;
+}
