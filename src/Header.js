@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { logout } from './services/supabase-utils';
+import './AuthPage.css';
 
 export default function Header({ setUser }) {
   /*const history = useHistory();
@@ -18,14 +19,26 @@ export default function Header({ setUser }) {
   }
 
   return (
-    <header>
-      <NavLink exact to={'/search'}>
-        Search
-      </NavLink>
-      <NavLink exact to={'/watched'}>
-        Watch List
-      </NavLink>
-      <button onClick={handleLogout}>Logout</button>
+    <header className="header-links">
+      <ul>
+        <li>
+          <NavLink exact to={'/search'}>
+            Search
+          </NavLink>
+        </li>
+        <br></br>
+        <li>
+          <NavLink exact to={'/watched'}>
+            Watch List
+          </NavLink>
+        </li>
+        <br></br>
+        <li>
+          <button className="buttons" onClick={handleLogout}>
+            Logout
+          </button>
+        </li>
+      </ul>
     </header>
   );
 }
