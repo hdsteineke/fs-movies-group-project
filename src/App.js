@@ -1,24 +1,56 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 import './App.css';
+import './SearchPage.css';
+import Header from './Header.js';
+import SearchPage from './SearchPage.js';
+import WatchedPage from './WatchedPage.js';
+import AuthPage from './AuthPage.js';
+import { Redirect } from 'react-router-dom';
+import { getUser } from './services/supabase-utils';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    async function userInfo() {
+      const userData = await getUser();
+      if (userData) {
+        setUser(userData);
+      }
+    }
+    userInfo();
+  }, []);
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Header setUser={setUser} />
+    
+        {/* A <Switch> looks through its children <Route>s and
+                renders the first one that matches the current URL. */}
+        <Switch>
+          <Route exact path="/search">
+            { user ? <SearchPage /> : <AuthPage setUser={setUser}/>}
+          </Route>
+          <Route exact path="/watched">
+            <WatchedPage />
+          </Route>
+          <Route exact path="/">
+            {user
+              ? <Redirect to="/search"/>
+              : <AuthPage setUser={setUser}/>}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+    
+    
+
   );
 }
 
