@@ -21,6 +21,13 @@ export default function SearchPage() {
 
   return (
     <div>
+      <form>
+        <label>
+          Search movie by title:
+          <input>
+          </input>
+        </label>
+      </form>
       <MovieList movies={movies}/>
     </div>
   );

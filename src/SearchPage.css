@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -18,4 +20,17 @@
 
 .movie img {
   width: 250px;
+}
+
+header a {
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  margin: 5px;
 }
