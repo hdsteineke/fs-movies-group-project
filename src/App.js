@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,9 +10,17 @@ import SearchPage from './SearchPage.js';
 import WatchedPage from './WatchedPage.js';
 import AuthPage from './AuthPage.js';
 import { Redirect } from 'react-router-dom';
+import { getUser } from './services/supabase-utils';
 
 function App() {
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const userData = getUser();
+    if (userData) {
+      setUser(userData);
+    }
+  }, []);
     
   return (
     <Router>
