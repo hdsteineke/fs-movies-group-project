@@ -38,7 +38,7 @@ function App() {
             { user ? <SearchPage /> : <AuthPage setUser={setUser}/>}
           </Route>
           <Route exact path="/watched">
-            { user ? <WatchedPage /> : <AuthPage setUser={setUser}/>}
+            <WatchedPage />
           </Route>
           <Route exact path="/">
             {user
