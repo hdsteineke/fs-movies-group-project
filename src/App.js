@@ -17,10 +17,13 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const userData = getUser();
-    if (userData) {
-      setUser(userData);
+    async function userInfo() {
+      const userData = await getUser();
+      if (userData) {
+        setUser(userData);
+      }
     }
+    userInfo();
   }, []);
     
   return (
