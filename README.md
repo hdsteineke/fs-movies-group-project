@@ -42,6 +42,11 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
      - Search
      - Watched
      - Logout
+6. Functions (Third party APIs)
+   - getMovies
+     - fetch utils
+     - netlify function
+-----------------------------------------
 5. Search
    - Header
    - Movie List
@@ -55,12 +60,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
      - label
        - input
      - button
-6. Functions (Third party APIs)
-   - getMovies
-     - fetch utils
-     - netlify function
-   - getWatchedMovies
 7. Supabase Fetch Utils
+   - getWatchedMovies
    - Watched Movies Table
      - id
      - user_id
