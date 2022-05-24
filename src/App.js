@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
+import './SearchPage.css';
 import Header from './Header.js';
 import SearchPage from './SearchPage.js';
 import WatchedPage from './WatchedPage.js';
