@@ -8,13 +8,11 @@ export default function WatchedPage() {
 
   async function getWatchListInfo() {
     const { data } = await getWatchList();
-    console.log('test', data);
     setWatchList(data);
   }
 
   useEffect(() => {
     getWatchListInfo();
-    console.log('watchlist', watchList);
   }, []);
 
   return (
