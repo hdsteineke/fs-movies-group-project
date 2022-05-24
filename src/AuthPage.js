@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { signUpUser, signInUser } from './services/supabase-utils.js';
+import './AuthPage.css';
 
 export default function AuthPage({ setUser }) {
   const [signUpEmail, setSignUpEmail] = useState('');
@@ -20,8 +21,8 @@ export default function AuthPage({ setUser }) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSignIn}>
+    <div className="login-forms">
+      <form className="sign-in-form" onSubmit={handleSignIn}>
         <label>
           Email
           <input onChange={(e) => setSignInEmail(e.target.value)} />
@@ -30,9 +31,9 @@ export default function AuthPage({ setUser }) {
           Password
           <input onChange={(e) => setSignInPassword(e.target.value)} />
         </label>
-        <button>Sign In</button>
+        <button className="buttons">Sign In</button>
       </form>
-      <form onSubmit={handleSignUp}>
+      <form className="sign-up-form" onSubmit={handleSignUp}>
         <label>
           Email
           <input onChange={(e) => setSignUpEmail(e.target.value)} />
@@ -41,7 +42,7 @@ export default function AuthPage({ setUser }) {
           Password
           <input onChange={(e) => setSignUpPassword(e.target.value)} />
         </label>
-        <button>Sign Up</button>
+        <button className="buttons">Sign Up</button>
       </form>
     </div>
   );
