@@ -24,20 +24,27 @@ export async function logout() {
 }
 
 export async function getWatchList() {
-  const response = await client.from('watchedMovies').select('*');
+  const response = await client
+    .from('watchedMovies')
+    .select('*');
 
   return response;
 }
 
 export async function getWatchedMovies() {
-  const response = await client.from('watchedMovies').select('*').is('watched', true);
-
+  const response = await client
+    .from('watchedMovies')
+    .select('*')
+    .is('watched', true);
+  
   return response;
 }
 
 export async function addToWatchList(movie) {
-  const response = await client.from('watchedMovies').insert(movie);
-
+  const response = await client
+    .from('watchedMovies')
+    .insert(movie);
+  
   return response;
 }
 
@@ -51,8 +58,11 @@ export async function updateWatchStatus(id, watchStatus) {
   return response;
 }
 
+
 export async function getSingleWatchedMovie(id) {
-  const response = await client.from('watchedMovies').select('*');
+  const response = await client
+    .from('watchedMovies')
+    .select('*');
 
   return response;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { searchMovies } from './services/fetch-utils';
+import MovieList from './MovieList';
+
 
 export default function SearchPage() {
   const [query, setQuery] = useState('jaws');
@@ -9,6 +11,7 @@ export default function SearchPage() {
   async function getMovies() {
     const { results } = await searchMovies(query);
     setMovies(results);
+    console.log(results, 'movie');
   }
 
   useEffect(() => {
@@ -18,11 +21,14 @@ export default function SearchPage() {
 
   return (
     <div>
-      {movies.map((movie, i) => 
-        <div key={i}>
-          {movie.original_title}
-        </div>
-      )}
+      <form>
+        <label>
+          Search movie by title:
+          <input>
+          </input>
+        </label>
+      </form>
+      <MovieList movies={movies}/>
     </div>
   );
 }
