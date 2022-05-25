@@ -10,7 +10,7 @@ export default function MovieList({ movies }) {
           title={movie.title}
           poster_path={movie.poster_path}
           overview={movie.overview}
-         
+          id={movie.id}
         />
 
       )};
