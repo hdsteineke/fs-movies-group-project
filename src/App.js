@@ -13,6 +13,7 @@ import AuthPage from './AuthPage.js';
 import { Redirect } from 'react-router-dom';
 import { getUser } from './services/supabase-utils';
 
+//testing dev setup for netlify
 function App() {
   const [user, setUser] = useState(null);
 
