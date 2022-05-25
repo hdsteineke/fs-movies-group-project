@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  border: groove;
+  width: 400px;
+  margin: 15px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.movie img {
+  width: 250px;
+}
+
+header a {
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form button {
+  height: 25px;
+}
+
+input {
+  margin: 5px;
+}
