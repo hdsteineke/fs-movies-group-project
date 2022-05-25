@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-body {
-  background-image: url(./store.jpeg);
-}
-
 .movie {
   background-color: rgb(222, 222, 222);
   opacity: 95%;
