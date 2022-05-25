@@ -16,9 +16,5 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-<<<<<<< HEAD
 
 //testing
-=======
-//testing 
->>>>>>> c95b58d8354f4e3a3e035a4441d52e25ec15fbfa
