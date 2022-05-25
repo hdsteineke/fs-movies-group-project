@@ -31,6 +31,10 @@ form {
   justify-content: center;
 }
 
+form button {
+  height: 25px;
+}
+
 input {
   margin: 5px;
 }
