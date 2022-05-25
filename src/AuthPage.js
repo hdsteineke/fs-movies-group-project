@@ -10,13 +10,13 @@ export default function AuthPage({ setUser }) {
 
   async function handleSignUp(e) {
     e.preventDefault();
-    const user = await signUpUser(signUpEmail, signUpPassword);
+    const { user } = await signUpUser(signUpEmail, signUpPassword);
     setUser(user);
   }
 
   async function handleSignIn(e) {
     e.preventDefault();
-    const user = await signInUser(signInEmail, signInPassword);
+    const { user } = await signInUser(signInEmail, signInPassword);
     setUser(user);
   }
 
