@@ -11,22 +11,27 @@ export default function SearchPage() {
   async function getMovies() {
     const { results } = await searchMovies(query);
     setMovies(results);
-    console.log(results, 'movie');
   }
 
   useEffect(() => {
     getMovies();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  }, []);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    getMovies();
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Search movie by title:
-          <input>
+          <input onChange={e => setQuery(e.target.value)}>
           </input>
         </label>
+        <button>Search</button>
       </form>
       <MovieList movies={movies}/>
     </div>
