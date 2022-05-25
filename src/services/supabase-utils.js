@@ -1,18 +1,18 @@
 import { client } from './client';
 
 export async function getUser() {
-  return client.auth.session();
+  return client.auth.session() && client.auth.session().user;
 }
 
 export async function signUpUser(email, password) {
   ///revisit email/password arguments --- may need curlies
-  const response = await client.auth.signUp(email, password);
+  const response = await client.auth.signUp({ email, password });
 
   return response;
 }
 
 export async function signInUser(email, password) {
-  const response = await client.auth.signIn(email, password);
+  const response = await client.auth.signIn({ email, password });
 
   return response;
 }
@@ -62,7 +62,8 @@ export async function updateWatchStatus(id, watchStatus) {
 export async function getSingleWatchedMovie(id) {
   const response = await client
     .from('watchedMovies')
-    .select('*');
+    .select('*')
+    .match({ id });
 
   return response;
 }
