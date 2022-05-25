@@ -25,3 +25,7 @@ img {
   display: block;
   margin: auto;
 }
+
+.watchListed {
+  background-color: lightgreen;
+}

@@ -6,18 +6,25 @@ import { getWatchList } from './services/supabase-utils';
 export default function WatchedPage() {
   const [watchList, setWatchList] = useState([]);
 
-  async function getWatchListInfo() {
+  async function getWatchedMoviesInfo() {
     const { data } = await getWatchList();
     setWatchList(data);
   }
 
+  function isWatchListed(id) {
+    const watched = watchList.find(item => Number(item.id) === Number(id));
+
+    return Boolean(watched);
+  }
+
   useEffect(() => {
-    getWatchListInfo();
+    getWatchedMoviesInfo();
   }, []);
 
   return (
     <div>
-      <MovieList movies={watchList}/>
+      <h1 className='movie-title'>My Watch List</h1>
+      <MovieList movies={watchList} getWatchedMoviesInfo={getWatchedMoviesInfo} isWatchListed={isWatchListed}/>
     </div>
   );
 }

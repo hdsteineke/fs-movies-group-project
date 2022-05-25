@@ -1,7 +1,8 @@
 import React from 'react';
 import { addToWatchList } from './services/supabase-utils';
 
-export default function Movie({ title, poster_path, overview, id }) {
+export default function Movie({ title, poster_path, overview, id, getWatchedMoviesInfo, isWatchListed }) {
+  const watchListed = isWatchListed(id);
   async function handleClick() {
     const movieItem = {
       title: title,
@@ -11,14 +12,15 @@ export default function Movie({ title, poster_path, overview, id }) {
     };
 
     await addToWatchList(movieItem);
+    await getWatchedMoviesInfo();
   }
 
   return (
-    <div className="movie">
+    <div className={`movie ${watchListed ? 'watchListed' : null }`}>
       <h3 className="movie-title">{title}</h3>
       <img src={`https://image.tmdb.org/t/p/original/${poster_path}`} />
       <p>{overview}</p>
-      <button onClick={handleClick}>Add to Watched List</button>
+      { watchListed ? null : <button onClick={handleClick}>Add to Watched List</button>}
     </div>
   );
 }
