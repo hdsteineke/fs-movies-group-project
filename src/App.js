@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
+import './AuthPage.css';
 import './SearchPage.css';
 import Header from './Header.js';
 import SearchPage from './SearchPage.js';
@@ -13,6 +14,7 @@ import AuthPage from './AuthPage.js';
 import { Redirect } from 'react-router-dom';
 import { getUser } from './services/supabase-utils';
 
+//testing dev setup for netlify
 function App() {
   const [user, setUser] = useState(null);
 

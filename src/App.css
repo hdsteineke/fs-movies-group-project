@@ -3,12 +3,12 @@
 }
 
 body {
-  background-image: url(./store.jpeg);
+  background-image: url(store.jpeg);
 }
 
 .movie {
   background-color: rgb(222, 222, 222);
-  opacity: 95%;
+  opacity: 0.95;
   border: solid 20px black;
   font-style: italic;
   font-weight: 400;
