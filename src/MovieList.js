@@ -1,7 +1,7 @@
 import React from 'react';
 import Movie from './Movie';
 
-export default function MovieList({ movies }) {
+export default function MovieList({ movies, isWatchListed, getWatchedMoviesInfo }) {
   return (
     <div className='movie-list'>
 
@@ -11,6 +11,8 @@ export default function MovieList({ movies }) {
           poster_path={movie.poster_path}
           overview={movie.overview}
           id={movie.id}
+          isWatchListed={isWatchListed}
+          getWatchedMoviesInfo={getWatchedMoviesInfo}
         />
 
       )};
